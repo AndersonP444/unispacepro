@@ -1,0 +1,107 @@
+========================================================================
+UNISPACEPRO - GUIA PASO A PASO PARA ABRIR EL PROYECTO EN UNA PC NUEVA
+Universidad Maritima del Caribe (UMC)
+Incluye: Modulo de Administrador en Tiempo Real + Auditorio de Eventos
+========================================================================
+
+REQUISITOS PREVIOS EN LA PC DE TUS COLEGAS:
+1. XAMPP (o Laragon) instalado con PHP 8.2 o superior y MySQL.
+2. Composer instalado (https://getcomposer.org/).
+3. WinRAR para descomprimir el archivo.
+
+------------------------------------------------------------------------
+PASO 1: DESCOMPRIMIR EL PROYECTO
+------------------------------------------------------------------------
+1. Crea una carpeta llamada "UnispacePro_Proyecto" en el Escritorio (o donde prefieras).
+2. Extrae todo el contenido de "UnispacePro_Proyecto.rar" dentro de esa carpeta.
+
+------------------------------------------------------------------------
+PASO 2: ENCENDER E IMPORTAR LA BASE DE DATOS (XAMPP)
+------------------------------------------------------------------------
+1. Abre el Panel de Control de XAMPP.
+2. Enciende "Apache" y "MySQL" pulsando el boton "Start" en ambos.
+3. Abre en tu navegador: http://localhost/phpmyadmin
+4. En el menu izquierdo, haz clic en "Nueva" (New) y crea una base de datos llamada exactamente:
+   unispacepro
+5. Selecciona la base de datos "unispacepro" recien creada y haz clic arriba en la pestana "Importar".
+6. Haz clic en "Seleccionar archivo" y busca dentro de la carpeta del proyecto el archivo:
+   database/unispacepro_actualizado.sql
+7. Baja hasta el final de la pagina y haz clic en "Importar" (o "Continuar").
+   (Esto cargara automaticamente todas las tablas, el usuario Administrador, profesores, estudiantes, cursos, talleres, salones, el Auditorio Principal con sus 96 butacas y los eventos pagos).
+
+------------------------------------------------------------------------
+PASO 3: INSTALAR DEPENDENCIAS DE LARAVEL
+------------------------------------------------------------------------
+1. Abre la carpeta del proyecto en Visual Studio Code (o abre una terminal PowerShell / CMD dentro de la carpeta).
+2. Ejecuta el siguiente comando para instalar la carpeta vendor de Laravel:
+   composer install
+
+3. (Opcional) Si deseas regenerar el enlace de almacenamiento de imagenes, ejecuta:
+   php artisan storage:link
+
+------------------------------------------------------------------------
+PASO 4: ENCENDER LA PAGINA WEB
+------------------------------------------------------------------------
+En la terminal dentro de la carpeta del proyecto, ejecuta cualquiera de estos dos comandos:
+
+Opcion 1 (Recomendada y mas rapida):
+   php -S 127.0.0.1:8000 -t public
+
+Opcion 2 (Comando estandar de Laravel):
+   php artisan serve
+
+Finalmente, abre en tu navegador:
+   http://127.0.0.1:8000
+
+------------------------------------------------------------------------
+CUENTAS DE PRUEBA PARA INICIAR SESION
+(El login solicita Correo Electronico, Contrasena alfanumerica de minimo 8 caracteres con minusculas, mayusculas y numeros, y el codigo CAPTCHA)
+------------------------------------------------------------------------
+
+1. ADMINISTRADOR DEL SISTEMA (Control total en tiempo real y pagos del Auditorio):
+   - Correo:     admin@unispace.edu.ve
+   - Cedula:     00000001
+   - Contrasena: Admin1234!
+   * Funciones del Admin en "Mi Portal" (/dashboard):
+     - Aprobar o rechazar solicitudes de Pago Movil del Auditorio (envia correo con QR y boton de Google Calendar automaticamente).
+     - Asignar butacas del Auditorio manualmente cuando el pago se recibe por el Chatbot de WhatsApp.
+     - Cambiar salones/espacios de "Disponible (Abierto)" a "Cerrado / En Mantenimiento" o "En Uso" en tiempo real, editar sus equipos y fotos.
+     - Editar y crear Cursos, Talleres y Eventos del Auditorio (nombres, codigos, precios en USD, salones, profesores, descripciones con parrafos e imagenes).
+     - Editar y registrar Profesores en tiempo real (datos, biografia con parrafos e intereses).
+
+2. PROFESORES (16 Docentes Especialistas - Contrasena para todos: Prof1234!):
+   - mgonzalez@unispace.edu.ve (Prof. Maria Gonzalez   - Quimica / Taller Quimica)
+   - jramirez@unispace.edu.ve  (Prof. Jose Ramirez     - Tecnologia y Numericas)
+   - atorres@unispace.edu.ve   (Prof. Ana Torres       - Fisica / Taller Fisica)
+   - lmendoza@unispace.edu.ve  (Prof. Luis Mendoza     - Programacion)
+   - esuarez@unispace.edu.ve   (Prof. Elena Suarez     - Termodinamica)
+   - srios@unispace.edu.ve     (Prof. Sofia Rios       - Calculo)
+   - jlopez@unispace.edu.ve    (Prof. Javier Lopez     - Tecnologia Digital)
+   - pgomez@unispace.edu.ve    (Prof. Patricia Gomez   - Idiomas)
+   - rvargas@unispace.edu.ve   (Prof. Roberto Vargas   - Legislacion y Derecho Maritimo)
+   - cnavarro@unispace.edu.ve  (Prof. Carmen Navarro   - Comercio Internacional y Aduanas)
+   - fsilva@unispace.edu.ve    (Prof. Fernando Silva   - Meteorologia y Oceanografia)
+   - rmorales@unispace.edu.ve  (Prof. Ricardo Morales  - Navegacion Costera y Astronomica)
+   - vrojas@unispace.edu.ve    (Prof. Valeria Rojas    - Gestion Ambiental y Ecosistemas Costeros)
+   - hcastillo@unispace.edu.ve (Prof. Hector Castillo  - Administracion Portuaria y Logistica)
+   - mherrera@unispace.edu.ve  (Prof. Miguel Herrera   - Seguridad Maritima y Salvamento)
+   - gmedina@unispace.edu.ve   (Prof. Gabriela Medina  - Turismo Sostenible y Gestion Hotelera)
+
+3. ESTUDIANTES (Contrasena para todos: Est1234!):
+   - aperez@gmail.com          (Andres Perez   - C.I: 28100001)
+   - lmartinez@gmail.com       (Luisa Martinez - C.I: 28100002)
+   - dflores@gmail.com         (Diego Flores   - C.I: 28100003)
+
+------------------------------------------------------------------------
+COMO PROBAR EL AUDITORIO Y LA PASARELA DE PAGO MOVIL / WHATSAPP:
+------------------------------------------------------------------------
+1. Inicia sesion como Estudiante (ej. Cedula: 28100001 / Clave: Est1234!).
+2. Entra en el menu superior a "Auditorio y Eventos" (/auditorio).
+3. Elige cualquiera de los eventos especiales (Graduacion, Congreso o Simposio) y haz clic en "Seleccionar Butaca en el Mapa".
+4. Haz clic sobre una de las 96 butacas disponibles (A1 a H12).
+5. Veras dos opciones:
+   - Via 1 (Pasarela Web): Ingresa el Banco Emisor, Telefono y Numero de Referencia del Pago Movil y pulsa "Enviar Solicitud de Reserva". La butaca quedara separada en color ambar ("En Verificacion").
+   - Via 2 (Chatbot WhatsApp): Pulsa el boton de WhatsApp para enviar los datos prellenados de la butaca y el Pago Movil al Administrador.
+6. Ahora inicia sesion como Administrador (Cedula: 00000001 / Clave: Admin1234!) y entra a "Mi Portal" (/dashboard):
+   - En la pestana "Auditorio: Pagos y Asignacion Manual", veras la solicitud pendiente con su numero de referencia para darle a "Aprobar y Enviar QR", o bien el formulario para asignar manualmente la butaca reportada por WhatsApp.
+========================================================================
