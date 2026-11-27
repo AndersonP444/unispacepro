@@ -10,7 +10,7 @@ use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Ticket;
 
-// Esta clase Mailable se encarga de crear y enviar el correo electrónico de confirmación
+// Esta clase se encarga de crear y enviar el correo electrónico de confirmación
 // que recibe un estudiante inmediatamente después de que completa una reserva de asiento de manera exitosa.
 class ReservaConfirmada extends Mailable
 {
@@ -18,7 +18,7 @@ class ReservaConfirmada extends Mailable
 
     public $ticket;
 
-    // Al construir el mailable recibimos toda la información del ticket recién creado.
+    // Al construir recibimos toda la información del ticket recién creado.
     public function __construct(Ticket $ticket)
     {
         $this->ticket = $ticket;

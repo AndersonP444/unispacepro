@@ -10,7 +10,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-// Esta clase Mailable se encarga de estructurar el correo electrónico que le llega al usuario
+// Esta clase se encarga de estructurar el correo electrónico que le llega al usuario
 // cuando este solicita restablecer o recuperar su contraseña en la plataforma.
 class ResetPasswordMail extends Mailable
 {

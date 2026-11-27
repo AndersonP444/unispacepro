@@ -74,7 +74,7 @@
             </div>
         </div>
 
-        <!-- NAVEGACION POR PESTANAS -->
+        <!-- NAVEGACION POR PESTAÑAS -->
         <div class="admin-tabs" style="display: flex; gap: 0.5rem; flex-wrap: wrap; border-bottom: 2px solid #e2e8f0; margin-bottom: 2rem; padding-bottom: 0.5rem;">
             <button type="button" class="admin-tab-btn active" data-tab="pagos" onclick="switchAdminTab('pagos')">
                 Auditorio: Pagos y Asignacion Manual ({{ $solicitudesPendientes->count() }})
@@ -91,7 +91,7 @@
         </div>
 
         <!-- =========================================================================
-             PESTANA 1: AUDITORIO - SOLICITUDES DE PAGO MOVIL Y ASIGNACION MANUAL
+             AUDITORIO - SOLICITUDES DE PAGO MOVIL Y ASIGNACION MANUAL
              ========================================================================= -->
         <div id="tab-pagos" class="admin-tab-panel active">
 
@@ -273,7 +273,7 @@
         </div>
 
         <!-- =========================================================================
-             PESTANA 2: GESTION DE ESPACIOS Y SALONES EN TIEMPO REAL
+             GESTION DE ESPACIOS Y SALONES EN TIEMPO REAL
              ========================================================================= -->
         <div id="tab-espacios" class="admin-tab-panel" style="display: none;">
             <div style="margin-bottom: 1.25rem;">
@@ -341,7 +341,7 @@
         </div>
 
         <!-- =========================================================================
-             PESTANA 3: GESTION DE CURSOS, TALLERES Y EVENTOS DE AUDITORIO
+             GESTION DE CURSOS, TALLERES Y EVENTOS DE AUDITORIO
              ========================================================================= -->
         <div id="tab-cursos" class="admin-tab-panel" style="display: none;">
 
@@ -558,7 +558,7 @@
         </div>
 
         <!-- =========================================================================
-             PESTANA 4: GESTION DE PROFESORES EN TIEMPO REAL
+             GESTION DE PROFESORES EN TIEMPO REAL
              ========================================================================= -->
         <div id="tab-profesores" class="admin-tab-panel" style="display: none;">
 

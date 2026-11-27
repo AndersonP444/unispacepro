@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 use App\Models\Ticket;
 use App\Models\Curso;
 
-// Este controlador maneja la pantalla principal de usuario (el Dashboard) una vez que inicia sesión.
+// Este controlador maneja la pantalla principal de usuario una vez que inicia sesión.
 // Tiene lógica para dos tipos de perfiles:
 // 1. Si es un Profesor: Muestra sus cursos asignados junto a los estudiantes que han reservado asientos.
 // 2. Si es un Estudiante: Muestra sus tickets de reserva activos, su historial de reservas previas y un panel del clima.
@@ -90,7 +90,7 @@ class DashboardController extends Controller
             ->orderBy('fecha_inscripcion', 'desc')
             ->get();
 
-        // Consultamos un servicio de clima externo (Open-Meteo) para mostrar la temperatura actual en el campus (Catia la Mar).
+        // Consultamos un servicio de clima externo con Open-Meteo para mostrar la temperatura actual en Catia la Mar.
         // Si por alguna razón la API falla, capturamos la excepción para no detener la carga del portal de la aplicación.
         $clima = [
             'temperatura' => '--',

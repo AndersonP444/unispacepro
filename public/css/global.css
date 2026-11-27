@@ -1,26 +1,28 @@
 /* 
    ========================================================================
    UnispacePro Global CSS
-   Creado por Oscar y Greymel (Frontend)
    ========================================================================
 */
 
 :root {
-    /* Paleta UMC (Universidad Marítima del Caribe) */
-    --primary-color: #457b9d; /* Azul Acero UMC */
-    --primary-hover: #1d3557; /* Azul Oscuro UMC */
+    /* Paleta de la UMC*/
+    --primary-color: #457b9d;
+    /* Azul Acero */
+    --primary-hover: #1d3557;
+    /* Azul Oscuro */
     --secondary-color: #6c757d;
     --dark-color: #1a2c3f;
-    --light-color: #f4f6f2; /* Crema muy claro */
+    --light-color: #f4f6f2;
+    /* Crema */
     --white: #ffffff;
-    
+
     --success: #198754;
     --danger: #dc3545;
     --warning: #ffc107;
-    
+
     --font-main: 'Inter', sans-serif;
     --transition: all 0.3s ease;
-    --shadow: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 * {
@@ -48,8 +50,11 @@ a {
     margin: 0 auto;
 }
 
-/* ================== TYPOGRAPHY ================== */
-h1, h2, h3, h4 {
+/* ================== tipograf ================== */
+h1,
+h2,
+h3,
+h4 {
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -66,7 +71,7 @@ h1, h2, h3, h4 {
     margin-bottom: 3rem;
 }
 
-/* ================== BUTTONS ================== */
+/* ================== botones ================== */
 .btn {
     display: inline-block;
     padding: 0.6rem 1.5rem;
@@ -108,7 +113,7 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
-/* ================== HEADER NAV ================== */
+/* ================== HEADER ================== */
 .main-header {
     background-color: var(--white);
     box-shadow: var(--shadow);
@@ -154,9 +159,9 @@ h1, h2, h3, h4 {
     gap: 1rem;
 }
 
-/* ================== HERO SECTION ================== */
+/* ================== HERO ================== */
 .hero-section {
-    background: linear-gradient(135deg, rgba(13,110,253,0.1) 0%, rgba(13,110,253,0.05) 100%);
+    background: linear-gradient(135deg, rgba(13, 110, 253, 0.1) 0%, rgba(13, 110, 253, 0.05) 100%);
     padding: 6rem 0;
     text-align: center;
 }
@@ -173,7 +178,7 @@ h1, h2, h3, h4 {
     margin: 0 auto 2rem auto;
 }
 
-/* ================== INFRAESTRUCTURA (CSS GRID) ================== */
+/* ================== INFRAESTRUCTURA  ================== */
 .infraestructura-section {
     padding: 5rem 0;
     background-color: var(--white);
@@ -234,25 +239,42 @@ h1, h2, h3, h4 {
     margin-bottom: 1rem;
 }
 
-.status-verde { color: var(--success); }
-.status-rojo { color: var(--danger); }
-.status-gris { color: var(--secondary-color); }
+.status-verde {
+    color: var(--success);
+}
+
+.status-rojo {
+    color: var(--danger);
+}
+
+.status-gris {
+    color: var(--secondary-color);
+}
 
 .status-indicator {
     width: 10px;
     height: 10px;
     border-radius: 50%;
 }
-.status-verde .status-indicator { background-color: var(--success); }
-.status-rojo .status-indicator { background-color: var(--danger); }
-.status-gris .status-indicator { background-color: var(--secondary-color); }
+
+.status-verde .status-indicator {
+    background-color: var(--success);
+}
+
+.status-rojo .status-indicator {
+    background-color: var(--danger);
+}
+
+.status-gris .status-indicator {
+    background-color: var(--secondary-color);
+}
 
 .salon-equipment {
     font-size: 0.9rem;
     color: var(--dark-color);
 }
 
-/* ================== CATALOGO (CSS GRID) ================== */
+/* ================== CATALOGO  ================== */
 .catalogo-section {
     padding: 5rem 0;
     background-color: var(--light-color);
@@ -284,9 +306,20 @@ h1, h2, h3, h4 {
     text-transform: uppercase;
 }
 
-.badge-curso { background: rgba(13,110,253,0.1); color: var(--primary-color); }
-.badge-taller { background: rgba(25,135,84,0.1); color: var(--success); }
-.badge-clase { background: rgba(255,193,7,0.1); color: #b8860b; }
+.badge-curso {
+    background: rgba(13, 110, 253, 0.1);
+    color: var(--primary-color);
+}
+
+.badge-taller {
+    background: rgba(25, 135, 84, 0.1);
+    color: var(--success);
+}
+
+.badge-clase {
+    background: rgba(255, 193, 7, 0.1);
+    color: #b8860b;
+}
 
 .curso-body {
     flex-grow: 1;
@@ -360,9 +393,9 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255,255,255,0.2);
+    color: rgba(255, 255, 255, 0.2);
     font-size: 2rem;
-    border: 2px dashed rgba(255,255,255,0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.1);
 }
 
 .hotspot {
@@ -377,7 +410,7 @@ h1, h2, h3, h4 {
     background-color: var(--primary-color);
     border-radius: 50%;
     border: 3px solid var(--white);
-    box-shadow: 0 0 0 5px rgba(13,110,253,0.3);
+    box-shadow: 0 0 0 5px rgba(13, 110, 253, 0.3);
     animation: pulse 2s infinite;
 }
 
@@ -404,12 +437,20 @@ h1, h2, h3, h4 {
 }
 
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(13,110,253,0.7); }
-    70% { box-shadow: 0 0 0 10px rgba(13,110,253,0); }
-    100% { box-shadow: 0 0 0 0 rgba(13,110,253,0); }
+    0% {
+        box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(13, 110, 253, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
+    }
 }
 
-/* ================== FOOTER (PALETA UMC) ================== */
+/* ================== FOOTER tipo umc ================== */
 .main-footer {
     background-color: var(--primary-color);
     color: var(--white);
@@ -444,11 +485,11 @@ h1, h2, h3, h4 {
 .footer-column li::before {
     content: "•";
     margin-right: 0.5rem;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-column a {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
     transition: var(--transition);
 }
 
@@ -461,7 +502,7 @@ h1, h2, h3, h4 {
     background-color: var(--primary-hover);
     padding: 1.5rem 0;
     font-size: 0.8rem;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-bottom-container {
@@ -481,24 +522,25 @@ h1, h2, h3, h4 {
     max-width: 400px;
 }
 
-/* ================== MEDIA QUERIES (Responsividad pura) ================== */
+/* ================== Responsividad ================== */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
         gap: 1rem;
     }
-    
+
     .main-nav ul {
         flex-wrap: wrap;
         justify-content: center;
         gap: 1rem;
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
 }
-/* ================== AUTH SECTION ================== */
+
+/* ================== AUTH  ================== */
 .auth-section {
     padding: 5rem 0;
     min-height: calc(100vh - 150px);
@@ -566,7 +608,7 @@ h1, h2, h3, h4 {
 .form-group input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(13,110,253,0.25);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
 }
 
 .checkbox-group {
@@ -607,7 +649,8 @@ h1, h2, h3, h4 {
 .alert-danger ul {
     margin-left: 1.5rem;
 }
-/* ================== DASHBOARD SECTION ================== */
+
+/* ================== DASHBOARD ================== */
 .dashboard-section {
     padding: 3rem 0;
     min-height: calc(100vh - 150px);
@@ -653,7 +696,9 @@ h1, h2, h3, h4 {
     border-bottom: 2px solid #dee2e6;
 }
 
-.mt-4 { margin-top: 2rem; }
+.mt-4 {
+    margin-top: 2rem;
+}
 
 .tickets-list {
     display: flex;
@@ -731,6 +776,7 @@ h1, h2, h3, h4 {
     color: var(--danger);
     border-color: var(--danger);
 }
+
 .btn-cancelar:hover {
     background: var(--danger);
     color: var(--white);
@@ -747,8 +793,16 @@ h1, h2, h3, h4 {
     font-size: 0.8rem;
     font-weight: 700;
 }
-.status-completado { background: #d1e7dd; color: #0f5132; }
-.status-cancelado { background: #f8d7da; color: #842029; }
+
+.status-completado {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.status-cancelado {
+    background: #f8d7da;
+    color: #842029;
+}
 
 .calendar-widget {
     background: var(--white);
@@ -773,6 +827,7 @@ h1, h2, h3, h4 {
     border-radius: 8px;
     border: 2px dashed #ced4da;
 }
+
 .calendar-placeholder p:first-child {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -785,6 +840,7 @@ h1, h2, h3, h4 {
     text-align: center;
     box-shadow: var(--shadow);
 }
+
 .empty-state p {
     margin-bottom: 1.5rem;
     color: var(--secondary-color);
@@ -796,18 +852,21 @@ h1, h2, h3, h4 {
         grid-template-columns: 1fr;
     }
 }
+
 @media (max-width: 768px) {
     .dashboard-header {
         flex-direction: column;
         text-align: center;
         gap: 1.5rem;
     }
+
     .ticket-body {
         flex-direction: column;
         gap: 1.5rem;
         text-align: center;
     }
 }
+
 /* ================== RESERVA DE BUTACAS ================== */
 .reserva-section {
     padding: 3rem 0;
@@ -846,7 +905,7 @@ h1, h2, h3, h4 {
     color: #ced4da;
     font-weight: 700;
     letter-spacing: 2px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .butacas-grid {
@@ -889,14 +948,15 @@ h1, h2, h3, h4 {
 }
 
 .butaca-ocupada {
-    background: var(--danger); /* Rojo para ocupadas */
+    background: var(--danger);
+    /* Rojo para ocupadas */
     cursor: not-allowed;
     opacity: 0.8;
 }
 
 .butaca-seleccionada {
     background: var(--success);
-    box-shadow: 0 0 0 4px rgba(25,135,84,0.4);
+    box-shadow: 0 0 0 4px rgba(25, 135, 84, 0.4);
     transform: scale(1.1);
 }
 
@@ -906,7 +966,7 @@ h1, h2, h3, h4 {
     gap: 2rem;
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .leyenda-item {
@@ -942,6 +1002,7 @@ h1, h2, h3, h4 {
         height: 35px;
         font-size: 0.7rem;
     }
+
     .reserva-footer {
         flex-direction: column;
         gap: 1.5rem;

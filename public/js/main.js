@@ -1,36 +1,35 @@
 /**
  * ========================================================================
- * UnispacePro Global JavaScript
- * Creado por Oscar y Greymel (Frontend)
+ * UnispacePro JavaScript
  * ========================================================================
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('UnispacePro: Interfaz inicializada correctamente.');
 
-    // 1. Smooth Scrolling para los enlaces de navegación
+    //Smooth Scrolling para los enlaces de navegación
     const navLinks = document.querySelectorAll('.main-nav a');
-    
+
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', function (e) {
             const href = this.getAttribute('href');
-            
+
             // Solo hacer scroll suave si estamos en la página principal y el enlace tiene '#'
-            if(href && href.includes('#') && (window.location.pathname === '/' || window.location.pathname === '/index.php')) {
+            if (href && href.includes('#') && (window.location.pathname === '/' || window.location.pathname === '/index.php')) {
                 e.preventDefault();
                 const targetId = href.split('#')[1];
-                if(!targetId) return;
+                if (!targetId) return;
 
                 const targetElement = document.getElementById(targetId);
-                if(targetElement) {
-                    // Offset para compensar el header sticky
+                if (targetElement) {
+                    // Offset para compensar el header quitl
                     const headerHeight = document.querySelector('.main-header').offsetHeight;
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
-      
+
                     window.scrollTo({
-                         top: offsetPosition,
-                         behavior: "smooth"
+                        top: offsetPosition,
+                        behavior: "smooth"
                     });
                 } else {
                     // Si el elemento no existe en esta página, navega normalmente
@@ -40,17 +39,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Interacciones del Mapa (Oscar)
+    // Interacciones del Mapa
     const hotspots = document.querySelectorAll('.hotspot');
-    
+
     hotspots.forEach(hotspot => {
         hotspot.addEventListener('click', () => {
             const info = hotspot.querySelector('.hotspot-info h4');
-            if(info) console.log(`Clic en el ${info.innerText}`);
+            if (info) console.log(`Clic en el ${info.innerText}`);
         });
     });
 
-    // 3. Tarjetas de Salones (Animaciones extra o clics)
+    // Tarjetas de Salones (Animaciones extra o clics)
     const salonCards = document.querySelectorAll('.salon-card');
     salonCards.forEach(card => {
         card.addEventListener('click', () => {
@@ -61,17 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Módulo de Reserva de Butacas (Oscar)
+    // Módulo de Reserva de Butacas
     const butacasDisponibles = document.querySelectorAll('.butaca-disponible');
     const inputButacaId = document.getElementById('butaca_id');
     const labelAsiento = document.getElementById('asiento-label');
     const btnReservar = document.getElementById('btn-reservar');
 
-    if(butacasDisponibles.length > 0) {
+    if (butacasDisponibles.length > 0) {
         butacasDisponibles.forEach(butaca => {
-            butaca.addEventListener('click', function() {
+            butaca.addEventListener('click', function () {
                 // Si la butaca está ocupada no hacer nada
-                if(this.classList.contains('butaca-ocupada')) return;
+                if (this.classList.contains('butaca-ocupada')) return;
 
                 // Desmarcar todas las demás butacas disponibles
                 butacasDisponibles.forEach(b => {
@@ -86,11 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const etiqueta = this.getAttribute('data-etiqueta');
 
                 // Actualizar formulario oculto y UI
-                if(inputButacaId) inputButacaId.value = butacaId;
-                if(labelAsiento) labelAsiento.innerText = etiqueta;
-                
+                if (inputButacaId) inputButacaId.value = butacaId;
+                if (labelAsiento) labelAsiento.innerText = etiqueta;
+
                 // Habilitar botón de enviar
-                if(btnReservar) btnReservar.removeAttribute('disabled');
+                if (btnReservar) btnReservar.removeAttribute('disabled');
             });
         });
     }

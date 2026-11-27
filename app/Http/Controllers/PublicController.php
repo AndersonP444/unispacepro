@@ -10,7 +10,7 @@ use App\Models\Curso;
 // como la página de inicio, la lista de salones/espacios físicos, los cursos activos y el listado de profesores.
 class PublicController extends Controller
 {
-    // Carga la página de bienvenida principal (el Home de UnispacePro).
+    // Carga la página de bienvenida principal.
     public function index()
     {
         $stats = [

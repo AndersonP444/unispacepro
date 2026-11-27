@@ -24,7 +24,7 @@ class AdminController extends Controller
         }
     }
 
-    // 1. Aprobar solicitud de pago móvil del Auditorio
+    // Aprobar solicitud de pago móvil del Auditorio
     public function aprobarTicket($ticket_id)
     {
         $this->verificarAdmin();
@@ -43,7 +43,7 @@ class AdminController extends Controller
             ->with('success', 'Pago verificado y butaca ' . $ticket->butaca->etiqueta . ' asignada a ' . $ticket->usuario->nombreCompleto() . '. Se ha enviado el correo de confirmación con QR.');
     }
 
-    // 2. Rechazar solicitud de pago móvil y liberar la butaca
+    // Rechazar solicitud de pago móvil y liberar la butaca
     public function rechazarTicket($ticket_id)
     {
         $this->verificarAdmin();
@@ -57,7 +57,7 @@ class AdminController extends Controller
             ->with('success', 'Solicitud rechazada. La butaca ' . $etiqueta . ' de ' . $nombre . ' ha sido liberada nuevamente.');
     }
 
-    // 3. Asignación manual de butaca en el Auditorio (para pagos recibidos vía Bot de WhatsApp)
+    // Asignación manual de butaca en el Auditorio (para pagos recibidos por WhatsApp)
     public function asignarManual(Request $request)
     {
         $this->verificarAdmin();
@@ -123,7 +123,7 @@ class AdminController extends Controller
             ->with('success', 'Butaca ' . $butaca->etiqueta . ' asignada manualmente a ' . $usuario->nombreCompleto() . ' (Ticket: ' . $codigoTicket . '). Correo enviado con QR y enlace a calendario.');
     }
 
-    // 4. Actualizar un Espacio / Salón en tiempo real (estado disponible/cerrado, equipos, foto, etc.)
+    //Actualizar un Espacio / Salón en tiempo real (estado disponible/cerrado, equipos, foto, etc.)
     public function updateSalon(Request $request, $salon_id)
     {
         $this->verificarAdmin();
@@ -156,7 +156,7 @@ class AdminController extends Controller
             ->with('success', 'El espacio "' . $salon->nombre . '" (' . $salon->codigo . ') ha sido actualizado en tiempo real.');
     }
 
-    // 5. Actualizar un Curso, Taller o Evento en tiempo real
+    //Actualizar un Curso, Taller o Evento en tiempo real
     public function updateCurso(Request $request, $curso_id)
     {
         $this->verificarAdmin();
@@ -245,7 +245,7 @@ class AdminController extends Controller
             ->with('success', 'La información y el horario de "' . $curso->nombre . '" se actualizaron en tiempo real.');
     }
 
-    // 6. Crear un nuevo Curso, Taller o Evento del Auditorio
+    //Crear un nuevo Curso, Taller o Evento del Auditorio
     public function storeCurso(Request $request)
     {
         $this->verificarAdmin();
@@ -308,7 +308,7 @@ class AdminController extends Controller
             ->with('success', 'Se creó "' . $curso->nombre . '" exitosamente con su horario y salón asignado.');
     }
 
-    // 7. Actualizar datos de un Profesor en tiempo real
+    //Actualizar datos de un Profesor en tiempo real
     public function updateProfesor(Request $request, $profesor_id)
     {
         $this->verificarAdmin();
@@ -360,7 +360,7 @@ class AdminController extends Controller
             ->with('success', 'Los datos del Prof. ' . $profesor->nombreCompleto() . ' han sido actualizados en tiempo real.');
     }
 
-    // 8. Crear un nuevo Profesor desde el Panel Admin
+    //Crear un nuevo Profesor desde el Panel Admin
     public function storeProfesor(Request $request)
     {
         $this->verificarAdmin();

@@ -10,7 +10,7 @@ use App\Models\Usuario;
 class ChatbotController extends Controller
 {
     /**
-     * Responde preguntas frecuentes exclusivamente sobre la plataforma UniSpacePro.
+     * Responde preguntas frecuentes exclusivamente sobre la plataforma
      */
     public function responder(Request $request)
     {

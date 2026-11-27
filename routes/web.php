@@ -5,7 +5,6 @@ use App\Http\Controllers\PublicController;
 
 // En este archivo definimos todas las rutas de la aplicación.
 // Aquí conectamos cada URL que ingresa el usuario con su respectivo controlador.
-// Fue un trabajo en equipo donde nos organizamos para dividir las vistas públicas, el login y la zona del dashboard.
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
@@ -38,7 +37,7 @@ Route::post('password/email', [AuthController::class, 'sendResetLinkEmail'])->na
 Route::get('password/reset/{token}', [AuthController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [AuthController::class, 'reset'])->name('password.update');
 
-// Agrupamos bajo este middleware las rutas que requieren que el usuario esté obligatoriamente autenticado en el sistema.
+// Agrupamos las rutas que requieren que el usuario esté autenticado en el sistema.
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     

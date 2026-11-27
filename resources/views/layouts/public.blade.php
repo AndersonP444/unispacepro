@@ -1,6 +1,5 @@
 <!-- 
     Layout Principal de UniSpace
-    Equipo de Desarrollo: Oscar (Líder Frontend), Greymel (Co-líder/Fullstack), Anderson (Base de Datos) y Diego (Backend).
 -->
 <!DOCTYPE html>
 <html lang="es">
@@ -15,7 +14,7 @@
     <!-- Fuentes modernas: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Oscar y Greymel (Frontend): Estilos globales puros sin Tailwind como pidió Dayana -->
+    <!-- Estilos globales puro -->
     <style>
         :root {
             --primary-color: #1e3a5f;
@@ -221,7 +220,7 @@
         </div>
     </header>
 
-    <!-- MAIN (Contenido inyectado por las vistas hijas) -->
+    <!-- MAIN -->
     <main>
         @yield('content')
     </main>
